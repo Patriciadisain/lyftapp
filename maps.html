@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	  	<meta charset="utf-8">
+	  	<title>Lyft</title>
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<link rel="shortcut icon" href="imagen/lyft_favi.png" type="image/png">
+	  	<!-- favicon -->
+	  	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	  	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	  	<link href="css/bootstrap.min.css" rel="stylesheet">
+	  	<link href="css/font-awesome.min.css" rel="stylesheet">
+	  	<link href="css/main.css" rel="stylesheet">
+	  	<link href="css/queries.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="row iconos">
+			<div class="col-xs-3">
+				<a id="profile-btn" href="#"><div class="circulo"><i class="fa fa-user" aria-hidden="true"></i></div></a>
+			</div>
+			<div class="col-xs-6">
+				<img class="logo-xs" src="imagen/logo-lyft-fucsia.png" alt="LOGO">
+			</div>
+			<div class="col-xs-3">
+				<a href="https://help.lyft.com/hc/en-us/articles/224755947-Lyft-x-Starbucks"><div class="circulo gift"><i class="fa fa-gift" aria-hidden="true"></i></div></a>
+			</div>
+		</div>
+	<div id="map">		
+	</div>
+	<div id="usr-pro" class="user-profile">
+		<div class="data-user col-xs-7">
+			<a href="profile.html"><div class="circulo perfil"><i class="fa fa-user" aria-hidden="true"></i></div></a>
+			<h2 class="text-center">Your name</h2>	
+			<p class="text-center">View profile</p>
+			<hr>	
+			<span class="slider">
+				<i class="slider-ico fa fa-home" aria-hidden="true"></i>
+				<a class="slider-l" href="#">HOME</a>
+			</span>
+			<span class="slider">
+				<i class="slider-ico fa fa-archive" aria-hidden="true"></i>
+				<a class="slider-l" href="#">FREE RIDES</a>
+			</span>
+			<span class="slider">
+				<i class="slider-ico fa fa-history" aria-hidden="true"></i>
+				<a class="slider-l" href="#">RIDE HISTORY</a>
+			</span>
+			<span class="slider">
+				<i class="slider-ico fa fa-credit-card" aria-hidden="true"></i>
+				<a class="slider-l" href="#">PAYMENT</a>
+			</span>
+			<span class="slider">
+				<i class="slider-ico fa fa-question-circle" aria-hidden="true"></i>
+				<a class="slider-l" href="css/#">HELP</a>
+			</span>
+			<span class="slider">
+				<i class="slider-ico fa fa-cog" aria-hidden="true"></i>
+				<a class="slider-l" href="#">SETTINGS</a>
+			</span>
+			<span class="slider">
+				<i class="slider-ico fa fa-car" aria-hidden="true"></i>
+				<a class="slider-l" href="#">SIGN UO TO DRIVE</a>
+			</span>
+			<div class="slider text-center">
+				<i class=" slider-ico back fa fa-reply" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="transparente col-xs-5"></div>
+
+	</div>
+		<!-- NO BORRAR SCRYPT -->
+		<script type="text/javascript" src="js/jquery-3.1.1.min (1).js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script src="http://maps.google.com/maps/api/js?key=AIzaSyDF_Wz7JkGJnoxP4QVjugmobS1rrkpj4zY&callback=iniciar"></script>
+		<script>
+			navigator.geolocation.getCurrentPosition(iniciar);
+			 function iniciar(position){
+			    var mapOptions = {
+			    // center: new google.maps.LatLng(-33.41921,-70.6418611),
+			    	center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+			    	zoom: 16,
+			    	mapTypeId: google.maps.MapTypeId.ROADMAP
+			    };
+			    var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+			    var marker2 = new google.maps.Marker({
+			        position: map.getCenter(),
+			        // title: 'You are Here',
+			        map: map
+		        });
+			};
+		</script>
+	</body>
+</html>
